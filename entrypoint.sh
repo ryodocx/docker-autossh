@@ -17,6 +17,7 @@ let "DEFAULT_PORT += 32768"
 echo [INFO] Tunneling ${SSH_HOSTUSER:=root}@${SSH_HOSTNAME:=localhost}:${SSH_TUNNEL_REMOTE:=${DEFAULT_PORT}} to ${SSH_TUNNEL_HOST=localhost}:${SSH_TUNNEL_LOCAL:=22}
 
 echo autossh \
+ -g \
  -M 0 \
  -N \
  -o StrictHostKeyChecking=${STRICT_HOSTS_KEY_CHECKING} ${KNOWN_HOSTS_ARG:=} \
@@ -34,6 +35,7 @@ AUTOSSH_POLL=10 \
 AUTOSSH_LOGLEVEL=0 \
 AUTOSSH_LOGFILE=/dev/stdout \
 autossh \
+ -g \
  -M 0 \
  -N \
  -o StrictHostKeyChecking=${STRICT_HOSTS_KEY_CHECKING} ${KNOWN_HOSTS_ARG:=}  \
